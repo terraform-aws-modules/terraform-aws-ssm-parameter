@@ -1,5 +1,4 @@
 locals {
-  #  values_type = length(var.values) > 0 && var
   type = var.type != null ? var.type : (
     length(var.values) > 0 ? "StringList" : (
       can(tostring(var.value)) ? (try(tobool(var.secure_type) == true, false) ? "SecureString" : "String") : "StringList"
