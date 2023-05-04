@@ -14,7 +14,7 @@ output "value" {
 }
 
 output "insecure_value" {
-  description = "Insecure value of the parameter after jsondecode()"
+  description = "Insecure value of the parameter"
   value       = { for k, v in module.multiple : k => v.insecure_value }
   sensitive   = false
 }
@@ -22,7 +22,7 @@ output "insecure_value" {
 output "secure_value" {
   description = "Secure value of the parameter"
   value       = { for k, v in module.multiple : k => nonsensitive(v.secure_value) }
-  sensitive   = false #true
+  sensitive   = false
 }
 
 output "secure_type" {

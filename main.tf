@@ -48,7 +48,8 @@ resource "aws_ssm_parameter" "ignore_value" {
 
   lifecycle {
     ignore_changes = [
-      value,
+      insecure_value,
+      value
     ]
   }
 }

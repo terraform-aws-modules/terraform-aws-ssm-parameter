@@ -28,14 +28,14 @@ output "value" {
 }
 
 output "insecure_value" {
-  description = "Insecure value of the parameter after jsondecode()"
-  value       = local.secure_type ? null : try(jsondecode(local.stored_insecure_value), local.stored_insecure_value)
+  description = "Insecure value of the parameter"
+  value       = local.stored_insecure_value
   sensitive   = false
 }
 
 output "secure_value" {
   description = "Secure value of the parameter"
-  value       = local.secure_type ? local.stored_value : null
+  value       = local.stored_value
   sensitive   = true
 }
 
