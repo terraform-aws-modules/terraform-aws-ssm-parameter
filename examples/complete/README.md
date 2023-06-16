@@ -52,7 +52,7 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_insecure_value"></a> [insecure\_value](#output\_insecure\_value) | Insecure value of the parameter after jsondecode() |
+| <a name="output_insecure_value"></a> [insecure\_value](#output\_insecure\_value) | Insecure value of the parameter |
 | <a name="output_raw_value"></a> [raw\_value](#output\_raw\_value) | Raw value of the parameter (as it is stored in SSM). Use 'value' output to get jsondecode'd value |
 | <a name="output_secure_type"></a> [secure\_type](#output\_secure\_type) | Whether SSM parameter is a SecureString or not? |
 | <a name="output_secure_value"></a> [secure\_value](#output\_secure\_value) | Secure value of the parameter |

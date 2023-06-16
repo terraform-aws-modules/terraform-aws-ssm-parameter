@@ -56,12 +56,6 @@ variable "tier" {
   default     = null
 }
 
-variable "overwrite" {
-  description = "Whether to allow overwrite an existing parameter"
-  type        = string
-  default     = null
-}
-
 variable "key_id" {
   description = "KMS key ID or ARN for encrypting a parameter (when type is SecureString)"
   type        = string
