@@ -200,7 +200,6 @@ No modules.
 | <a name="input_ignore_value_changes"></a> [ignore\_value\_changes](#input\_ignore\_value\_changes) | Whether to create SSM Parameter and ignore changes in value | `bool` | `false` | no |
 | <a name="input_key_id"></a> [key\_id](#input\_key\_id) | KMS key ID or ARN for encrypting a parameter (when type is SecureString) | `string` | `null` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of SSM parameter | `string` | `null` | no |
-| <a name="input_overwrite"></a> [overwrite](#input\_overwrite) | Whether to allow overwrite an existing parameter | `string` | `null` | no |
 | <a name="input_secure_type"></a> [secure\_type](#input\_secure\_type) | Whether the type of the value should be considered as secure or not? | `bool` | `false` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags to assign to resources | `map(string)` | `{}` | no |
 | <a name="input_tier"></a> [tier](#input\_tier) | Parameter tier to assign to the parameter. If not specified, will use the default parameter tier for the region. Valid tiers are Standard, Advanced, and Intelligent-Tiering. Downgrading an Advanced tier parameter to Standard will recreate the resource. | `string` | `null` | no |
@@ -212,7 +211,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_insecure_value"></a> [insecure\_value](#output\_insecure\_value) | Insecure value of the parameter after jsondecode() |
+| <a name="output_insecure_value"></a> [insecure\_value](#output\_insecure\_value) | Insecure value of the parameter |
 | <a name="output_raw_value"></a> [raw\_value](#output\_raw\_value) | Raw value of the parameter (as it is stored in SSM). Use 'value' output to get jsondecode'd value |
 | <a name="output_secure_type"></a> [secure\_type](#output\_secure\_type) | Whether SSM parameter is a SecureString or not? |
 | <a name="output_secure_value"></a> [secure\_value](#output\_secure\_value) | Secure value of the parameter |

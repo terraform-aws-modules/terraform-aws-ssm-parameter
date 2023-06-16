@@ -12,7 +12,6 @@ module "wrapper" {
   description          = try(each.value.description, var.defaults.description, null)
   type                 = try(each.value.type, var.defaults.type, null)
   tier                 = try(each.value.tier, var.defaults.tier, null)
-  overwrite            = try(each.value.overwrite, var.defaults.overwrite, null)
   key_id               = try(each.value.key_id, var.defaults.key_id, null)
   allowed_pattern      = try(each.value.allowed_pattern, var.defaults.allowed_pattern, null)
   data_type            = try(each.value.data_type, var.defaults.data_type, null)

@@ -20,7 +20,6 @@ resource "aws_ssm_parameter" "this" {
   insecure_value = local.list_type || local.string_type ? local.value : null
 
   tier            = var.tier
-  overwrite       = var.overwrite
   key_id          = local.secure_type ? var.key_id : null
   allowed_pattern = var.allowed_pattern
   data_type       = var.data_type
@@ -39,7 +38,6 @@ resource "aws_ssm_parameter" "ignore_value" {
   insecure_value = local.list_type || local.string_type ? local.value : null
 
   tier            = var.tier
-  overwrite       = var.overwrite
   key_id          = local.secure_type ? var.key_id : null
   allowed_pattern = var.allowed_pattern
   data_type       = var.data_type
