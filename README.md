@@ -74,7 +74,6 @@ locals {
     "string" = {
       type            = "String"
       value           = "string_value123"
-      overwrite       = true
       tier            = "Intelligent-Tiering"
       allowed_pattern = "[a-z0-9_]+"
     }
@@ -131,7 +130,6 @@ module "multiple" {
   secure_type     = try(each.value.secure_type, null)
   description     = try(each.value.description, null)
   tier            = try(each.value.tier, null)
-  overwrite       = try(each.value.overwrite, null)
   key_id          = try(each.value.key_id, null)
   allowed_pattern = try(each.value.allowed_pattern, null)
   data_type       = try(each.value.data_type, null)
