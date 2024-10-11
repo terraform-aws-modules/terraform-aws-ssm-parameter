@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.2](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v1.1.1...v1.1.2) (2024-10-11)
+
+
+### Bug Fixes
+
+* Update CI workflow versions to latest ([#7](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/issues/7)) ([25083ba](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/commit/25083ba701549cfe4eb0d57c3fa659fb381f53ac))
+
 ## [1.1.1](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v1.1.0...v1.1.1) (2024-03-07)
 
 
