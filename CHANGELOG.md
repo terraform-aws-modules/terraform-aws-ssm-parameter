@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v1.1.3...v1.2.0) (2025-10-21)
+
+### Features
+
+* Add in overwrite variable and pass through to the call to the ssm par… ([#11](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/issues/11)) ([e1dd7a2](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/commit/e1dd7a268c5925b87aa8859c35d73d2b14a2503e))
+
 ## [1.1.3](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v1.1.2...v1.1.3) (2025-10-21)
 
 ### Bug Fixes
