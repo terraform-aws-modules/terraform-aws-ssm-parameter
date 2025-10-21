@@ -24,6 +24,8 @@ resource "aws_ssm_parameter" "this" {
   allowed_pattern = var.allowed_pattern
   data_type       = var.data_type
 
+  overwrite = var.overwrite
+
   tags = var.tags
 }
 
