@@ -20,19 +20,21 @@ Note that this example may create resources which cost money. Run `terraform des
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.37 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 6.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.37 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 6.0.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_disabled"></a> [disabled](#module\_disabled) | ../../ | n/a |
+| <a name="module_explicit_region"></a> [explicit\_region](#module\_explicit\_region) | ../../ | n/a |
+| <a name="module_explicit_region_ignore_value_changes"></a> [explicit\_region\_ignore\_value\_changes](#module\_explicit\_region\_ignore\_value\_changes) | ../../ | n/a |
 | <a name="module_multiple"></a> [multiple](#module\_multiple) | ../../ | n/a |
 | <a name="module_multiple_ignore_value_changes"></a> [multiple\_ignore\_value\_changes](#module\_multiple\_ignore\_value\_changes) | ../../ | n/a |
 | <a name="module_wrapper"></a> [wrapper](#module\_wrapper) | ../../wrappers | n/a |

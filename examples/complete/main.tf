@@ -3,8 +3,9 @@ provider "aws" {
 }
 
 locals {
-  name   = "ex-${basename(path.cwd)}"
-  region = "eu-west-1"
+  name            = "ex-${basename(path.cwd)}"
+  region          = "eu-west-1"
+  explicit_region = "eu-west-2"
 
   tags = {
     Name       = local.name
@@ -152,6 +153,28 @@ module "multiple_ignore_value_changes" {
   tags = local.tags
 }
 
+module "explicit_region" {
+  source = "../../"
+
+  region = local.explicit_region
+  name   = "explicit-region"
+  value  = "test-value"
+
+  tags = local.tags
+}
+
+module "explicit_region_ignore_value_changes" {
+  source = "../../"
+
+  ignore_value_changes = true
+
+  region = local.explicit_region
+  name   = "explicit-region-ignore-value-changes"
+  value  = "test-value"
+
+  tags = local.tags
+}
+
 ##########
 # Wrapper
 ##########
@@ -193,6 +216,6 @@ data "aws_ami" "amazon_linux" {
 
   filter {
     name   = "name"
-    values = ["amzn-ami-hvm-*-x86_64-gp2"]
+    values = ["amzn2-ami-*"]
   }
 }

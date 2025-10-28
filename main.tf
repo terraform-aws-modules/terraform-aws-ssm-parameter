@@ -15,6 +15,7 @@ resource "aws_ssm_parameter" "this" {
   name        = var.name
   type        = local.type
   description = var.description
+  region      = var.region
 
   value          = local.secure_type ? local.value : null
   insecure_value = local.list_type || local.string_type ? local.value : null
@@ -35,6 +36,7 @@ resource "aws_ssm_parameter" "ignore_value" {
   name        = var.name
   type        = local.type
   description = var.description
+  region      = var.region
 
   value          = local.secure_type ? local.value : null
   insecure_value = local.list_type || local.string_type ? local.value : null
