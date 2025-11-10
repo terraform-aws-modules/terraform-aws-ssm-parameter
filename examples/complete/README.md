@@ -33,8 +33,6 @@ Note that this example may create resources which cost money. Run `terraform des
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_disabled"></a> [disabled](#module\_disabled) | ../../ | n/a |
-| <a name="module_explicit_region"></a> [explicit\_region](#module\_explicit\_region) | ../../ | n/a |
-| <a name="module_explicit_region_ignore_value_changes"></a> [explicit\_region\_ignore\_value\_changes](#module\_explicit\_region\_ignore\_value\_changes) | ../../ | n/a |
 | <a name="module_multiple"></a> [multiple](#module\_multiple) | ../../ | n/a |
 | <a name="module_multiple_ignore_value_changes"></a> [multiple\_ignore\_value\_changes](#module\_multiple\_ignore\_value\_changes) | ../../ | n/a |
 | <a name="module_wrapper"></a> [wrapper](#module\_wrapper) | ../../wrappers | n/a |
@@ -60,7 +58,6 @@ No inputs.
 | <a name="output_secure_value"></a> [secure\_value](#output\_secure\_value) | Secure value of the parameter |
 | <a name="output_ssm_parameter_arn"></a> [ssm\_parameter\_arn](#output\_ssm\_parameter\_arn) | The ARN of the parameter |
 | <a name="output_ssm_parameter_name"></a> [ssm\_parameter\_name](#output\_ssm\_parameter\_name) | Name of the parameter |
-| <a name="output_ssm_parameter_tags_all"></a> [ssm\_parameter\_tags\_all](#output\_ssm\_parameter\_tags\_all) | All tags used for the parameter |
 | <a name="output_ssm_parameter_type"></a> [ssm\_parameter\_type](#output\_ssm\_parameter\_type) | Type of the parameter |
 | <a name="output_ssm_parameter_version"></a> [ssm\_parameter\_version](#output\_ssm\_parameter\_version) | Version of the parameter |
 | <a name="output_value"></a> [value](#output\_value) | Parameter value after jsondecode(). Probably this is what you are looking for |
