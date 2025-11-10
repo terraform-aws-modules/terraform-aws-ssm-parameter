@@ -9,49 +9,59 @@ locals {
   value       = local.list_type ? (length(var.values) > 0 ? jsonencode(var.values) : var.value) : var.value
 }
 
+################################################################################
+# SSM Parameter
+################################################################################
+
 resource "aws_ssm_parameter" "this" {
   count = var.create && !var.ignore_value_changes ? 1 : 0
 
-  name        = var.name
-  type        = local.type
-  description = var.description
-  region      = var.region
+  region = var.region
 
-  value          = local.secure_type ? local.value : null
-  insecure_value = local.list_type || local.string_type ? local.value : null
-
-  tier            = var.tier
-  key_id          = local.secure_type ? var.key_id : null
-  allowed_pattern = var.allowed_pattern
-  data_type       = var.data_type
-
-  overwrite = var.overwrite
+  allowed_pattern  = var.allowed_pattern
+  data_type        = var.data_type
+  description      = var.description
+  insecure_value   = local.list_type || local.string_type ? local.value : null
+  key_id           = local.secure_type ? var.key_id : null
+  name             = var.name
+  overwrite        = var.overwrite
+  tier             = var.tier
+  type             = local.type
+  value_wo         = local.secure_type ? local.value : null
+  value_wo_version = local.secure_type ? coalesce(var.value_wo_version, 1) : null
 
   tags = var.tags
 }
 
+################################################################################
+# SSM Parameter - Ignore Value Changes
+################################################################################
+
 resource "aws_ssm_parameter" "ignore_value" {
   count = var.create && var.ignore_value_changes ? 1 : 0
 
-  name        = var.name
-  type        = local.type
-  description = var.description
-  region      = var.region
+  region = var.region
 
-  value          = local.secure_type ? local.value : null
-  insecure_value = local.list_type || local.string_type ? local.value : null
-
-  tier            = var.tier
-  key_id          = local.secure_type ? var.key_id : null
-  allowed_pattern = var.allowed_pattern
-  data_type       = var.data_type
+  allowed_pattern  = var.allowed_pattern
+  data_type        = var.data_type
+  description      = var.description
+  insecure_value   = local.list_type || local.string_type ? local.value : null
+  key_id           = local.secure_type ? var.key_id : null
+  name             = var.name
+  overwrite        = var.overwrite
+  tier             = var.tier
+  type             = local.type
+  value_wo         = local.secure_type ? local.value : null
+  value_wo_version = local.secure_type ? coalesce(var.value_wo_version, 1) : null
 
   tags = var.tags
 
   lifecycle {
     ignore_changes = [
       insecure_value,
-      value
+      value,
+      value_wo,
+      value_wo_version,
     ]
   }
 }

@@ -17,5 +17,6 @@ module "wrapper" {
   tier                 = try(each.value.tier, var.defaults.tier, null)
   type                 = try(each.value.type, var.defaults.type, null)
   value                = try(each.value.value, var.defaults.value, null)
+  value_wo_version     = try(each.value.value_wo_version, var.defaults.value_wo_version, null)
   values               = try(each.value.values, var.defaults.values, [])
 }
