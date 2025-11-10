@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v1.2.0...v2.0.0) (2025-11-10)
+
+### ⚠ BREAKING CHANGES
+
+* Upgrade AWS provider and min required Terraform version to `6.8` and `1.11` respectively (#12)
+
+### Features
+
+* Upgrade AWS provider and min required Terraform version to `6.8` and `1.11` respectively ([#12](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/issues/12)) ([2193a3c](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/commit/2193a3c954331369f2ccedf2c6b55ad6418c6806))
+
 ## [1.2.0](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v1.1.3...v1.2.0) (2025-10-21)
 
 ### Features
