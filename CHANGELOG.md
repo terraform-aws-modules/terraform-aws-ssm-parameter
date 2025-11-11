@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.1](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v2.0.0...v2.0.1) (2025-11-11)
+
+### Bug Fixes
+
+* Set default value for `overwrite` to `null` which by default is `false` ([#14](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/issues/14)) ([58928d0](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/commit/58928d06224366ec14c8423a252964fb938dd123))
+
 ## [2.0.0](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v1.2.0...v2.0.0) (2025-11-10)
 
 ### ⚠ BREAKING CHANGES
