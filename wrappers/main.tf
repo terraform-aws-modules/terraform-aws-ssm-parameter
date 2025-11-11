@@ -10,7 +10,7 @@ module "wrapper" {
   ignore_value_changes = try(each.value.ignore_value_changes, var.defaults.ignore_value_changes, false)
   key_id               = try(each.value.key_id, var.defaults.key_id, null)
   name                 = try(each.value.name, var.defaults.name, null)
-  overwrite            = try(each.value.overwrite, var.defaults.overwrite, false)
+  overwrite            = try(each.value.overwrite, var.defaults.overwrite, null)
   region               = try(each.value.region, var.defaults.region, null)
   secure_type          = try(each.value.secure_type, var.defaults.secure_type, false)
   tags                 = try(each.value.tags, var.defaults.tags, {})

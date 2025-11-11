@@ -59,7 +59,7 @@ variable "name" {
 variable "overwrite" {
   description = "Overwrite an existing parameter. If not specified, defaults to `false` during create operations to avoid overwriting existing resources and then `true` for all subsequent operations once the resource is managed by Terraform"
   type        = bool
-  default     = false
+  default     = null
 }
 
 variable "tier" {
