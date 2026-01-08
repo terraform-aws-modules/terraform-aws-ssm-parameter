@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.0](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v2.0.1...v2.1.0) (2026-01-08)
+
+### Features
+
+* Add provider meta user-agent ([#16](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/issues/16)) ([cea20c8](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/commit/cea20c80a82e48bc91ff7b8b488e42d2d0eae2ca))
+
 ## [2.0.1](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v2.0.0...v2.0.1) (2025-11-11)
 
 ### Bug Fixes
