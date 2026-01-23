@@ -3,16 +3,17 @@
 ################################################################################
 
 locals {
-  # Making values nonsensitive, but keeping them in separate locals
-  stored_value = one(compact([
+  stored_value = coalesce(
     try(nonsensitive(aws_ssm_parameter.this[0].value), null),
     try(nonsensitive(aws_ssm_parameter.ignore_value[0].value), null),
-  ]))
-  stored_insecure_value = one(compact([
+  )
+
+  stored_insecure_value = coalesce(
     try(aws_ssm_parameter.this[0].insecure_value, null),
     try(aws_ssm_parameter.ignore_value[0].insecure_value, null),
-  ]))
-  raw_value = coalesce([local.stored_value, local.stored_insecure_value])
+  )
+
+  raw_value = coalesce(local.stored_value, local.stored_insecure_value)
 }
 
 output "raw_value" {
