@@ -21,13 +21,13 @@ resource "aws_ssm_parameter" "this" {
   allowed_pattern  = var.allowed_pattern
   data_type        = var.data_type
   description      = var.description
-  insecure_value   = local.list_type || local.string_type ? local.value : null
   key_id           = local.secure_type ? var.key_id : null
   name             = var.name
   overwrite        = var.overwrite
   tier             = var.tier
   type             = local.type
-  value            = local.value
+  insecure_value = local.secure_type ? null : local.value
+  value          = local.secure_type ? local.value : null
 
   tags = var.tags
 }
@@ -44,13 +44,13 @@ resource "aws_ssm_parameter" "ignore_value" {
   allowed_pattern  = var.allowed_pattern
   data_type        = var.data_type
   description      = var.description
-  insecure_value   = local.list_type || local.string_type ? local.value : null
   key_id           = local.secure_type ? var.key_id : null
   name             = var.name
   overwrite        = var.overwrite
   tier             = var.tier
   type             = local.type
-  value            = local.value
+  insecure_value = local.secure_type ? null : local.value
+  value          = local.secure_type ? local.value : null
 
 
   tags = var.tags
