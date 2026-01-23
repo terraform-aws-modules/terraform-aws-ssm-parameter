@@ -3,14 +3,16 @@
 ################################################################################
 
 locals {
-  stored_value = coalesce(
-    try(nonsensitive(aws_ssm_parameter.this[0].value), null),
-    try(nonsensitive(aws_ssm_parameter.ignore_value[0].value), null),
+  stored_value = try(
+    nonsensitive(aws_ssm_parameter.this[0].value),
+    nonsensitive(aws_ssm_parameter.ignore_value[0].value),
+    null
   )
 
-  stored_insecure_value = coalesce(
-    try(aws_ssm_parameter.this[0].insecure_value, null),
-    try(aws_ssm_parameter.ignore_value[0].insecure_value, null),
+  stored_insecure_value = try(
+    aws_ssm_parameter.this[0].insecure_value,
+    aws_ssm_parameter.ignore_value[0].insecure_value,
+    null
   )
 
   # Prefer secure, else insecure, else null
@@ -18,16 +20,15 @@ locals {
     local.stored_value != null && local.stored_value != ""
   ) ? local.stored_value : local.stored_insecure_value
 }
+
 output "raw_value" {
-  description = "Raw value of the parameter (as it is stored in SSM). Use 'value' output to get jsondecode'd value"
-  value       = local.raw_value
-  sensitive   = true
+  value     = local.raw_value
+  sensitive = true
 }
 
 output "value" {
-  description = "Parameter value after jsondecode(). Probably this is what you are looking for"
-  value       = try(jsondecode(local.raw_value), local.raw_value)
-  sensitive   = false
+  value     = local.raw_value == null ? null : try(jsondecode(local.raw_value), local.raw_value)
+  sensitive = false
 }
 
 output "insecure_value" {
