@@ -12,7 +12,7 @@ locals {
     try(aws_ssm_parameter.this[0].insecure_value, null),
     try(aws_ssm_parameter.ignore_value[0].insecure_value, null),
   ]))
-  raw_value = one(compact([local.stored_value, local.stored_insecure_value]))
+  raw_value = coalesce([local.stored_value, local.stored_insecure_value])
 }
 
 output "raw_value" {
