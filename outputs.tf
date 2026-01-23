@@ -13,7 +13,10 @@ locals {
     try(aws_ssm_parameter.ignore_value[0].insecure_value, null),
   )
 
-  raw_value = coalesce(local.stored_value, local.stored_insecure_value)
+  # Prefer secure, else insecure, else null
+  raw_value = (
+    local.stored_value != null && local.stored_value != ""
+  ) ? local.stored_value : local.stored_insecure_value
 }
 
 output "raw_value" {
