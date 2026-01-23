@@ -27,8 +27,7 @@ resource "aws_ssm_parameter" "this" {
   overwrite        = var.overwrite
   tier             = var.tier
   type             = local.type
-  value_wo         = local.secure_type ? local.value : null
-  value_wo_version = local.secure_type ? coalesce(var.value_wo_version, 1) : null
+  value            = local.value
 
   tags = var.tags
 }
@@ -51,8 +50,8 @@ resource "aws_ssm_parameter" "ignore_value" {
   overwrite        = var.overwrite
   tier             = var.tier
   type             = local.type
-  value_wo         = local.secure_type ? local.value : null
-  value_wo_version = local.secure_type ? coalesce(var.value_wo_version, 1) : null
+  value            = local.value
+
 
   tags = var.tags
 
@@ -60,8 +59,6 @@ resource "aws_ssm_parameter" "ignore_value" {
     ignore_changes = [
       insecure_value,
       value,
-      value_wo,
-      value_wo_version,
     ]
   }
 }
