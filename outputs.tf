@@ -18,7 +18,6 @@ locals {
     local.stored_value != null && local.stored_value != ""
   ) ? local.stored_value : local.stored_insecure_value
 }
-
 output "raw_value" {
   description = "Raw value of the parameter (as it is stored in SSM). Use 'value' output to get jsondecode'd value"
   value       = local.raw_value
