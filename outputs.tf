@@ -12,7 +12,11 @@ locals {
     try(aws_ssm_parameter.this[0].insecure_value, null),
     try(aws_ssm_parameter.ignore_value[0].insecure_value, null),
   ]))
-  raw_value = one(compact([local.stored_value, local.stored_insecure_value]))
+  # AWS provider v6 populates `value` for non-SecureString params too, so
+  # `stored_value` and `stored_insecure_value` are both set for String/StringList
+  # types. Pick by `secure_type` instead of `compact` to avoid the
+  # `one(list with 2 elements)` failure.
+  raw_value = local.secure_type ? local.stored_value : local.stored_insecure_value
 }
 
 output "raw_value" {
