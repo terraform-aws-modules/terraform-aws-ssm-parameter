@@ -1,6 +1,6 @@
-#######################
+################################################################################
 # SSM Parameter values
-#######################
+################################################################################
 
 output "raw_value" {
   description = "Raw value of the parameter (as it is stored in SSM). Use 'value' output to get jsondecode'd value"
@@ -31,9 +31,9 @@ output "secure_type" {
   sensitive   = false
 }
 
-################
+################################################################################
 # SSM Parameter
-################
+################################################################################
 
 output "ssm_parameter_arn" {
   description = "The ARN of the parameter"
@@ -53,9 +53,4 @@ output "ssm_parameter_name" {
 output "ssm_parameter_type" {
   description = "Type of the parameter"
   value       = { for k, v in module.multiple : k => v.ssm_parameter_type }
-}
-
-output "ssm_parameter_tags_all" {
-  description = "All tags used for the parameter"
-  value       = { for k, v in module.multiple : k => v.ssm_parameter_tags_all }
 }

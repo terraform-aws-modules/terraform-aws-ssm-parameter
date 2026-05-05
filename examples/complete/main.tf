@@ -11,11 +11,15 @@ locals {
     Example    = "complete"
     Repository = "github.com/terraform-aws-modules/terraform-aws-ssm-parameter"
   }
+}
 
+################################################################################
+# SSM Parameter
+################################################################################
+
+locals {
   parameters = {
-    #########
     # String
-    #########
     "string_simple" = {
       value = "string_value123"
     }
@@ -30,9 +34,7 @@ locals {
       data_type = "aws:ec2:image"
     }
 
-    ###############
     # SecureString
-    ###############
     "secure" = {
       type        = "SecureString"
       value       = "secret123123!!!"
@@ -66,9 +68,7 @@ locals {
       })
     }
 
-    #############
     # StringList
-    #############
     "list_as_autoguess_type" = {
       # List values should be specified as "values" (not "value")
       values = ["item1", "item2"]
@@ -107,10 +107,6 @@ locals {
     #    }
   }
 }
-
-################################################################################
-# SSM Parameter Module
-################################################################################
 
 module "multiple" {
   source = "../../"
@@ -152,9 +148,9 @@ module "multiple_ignore_value_changes" {
   tags = local.tags
 }
 
-##########
+################################################################################
 # Wrapper
-##########
+################################################################################
 
 locals {
   parameters_for_wrapper = {
@@ -171,9 +167,9 @@ module "wrapper" {
   items = local.parameters_for_wrapper
 }
 
-###########
+################################################################################
 # Disabled
-###########
+################################################################################
 
 module "disabled" {
   source = "../../"
@@ -193,6 +189,6 @@ data "aws_ami" "amazon_linux" {
 
   filter {
     name   = "name"
-    values = ["amzn-ami-hvm-*-x86_64-gp2"]
+    values = ["amzn2-ami-*"]
   }
 }

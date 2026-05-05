@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.0](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v2.0.1...v2.1.0) (2026-01-08)
+
+### Features
+
+* Add provider meta user-agent ([#16](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/issues/16)) ([cea20c8](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/commit/cea20c80a82e48bc91ff7b8b488e42d2d0eae2ca))
+
+## [2.0.1](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v2.0.0...v2.0.1) (2025-11-11)
+
+### Bug Fixes
+
+* Set default value for `overwrite` to `null` which by default is `false` ([#14](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/issues/14)) ([58928d0](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/commit/58928d06224366ec14c8423a252964fb938dd123))
+
+## [2.0.0](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v1.2.0...v2.0.0) (2025-11-10)
+
+### ⚠ BREAKING CHANGES
+
+* Upgrade AWS provider and min required Terraform version to `6.8` and `1.11` respectively (#12)
+
+### Features
+
+* Upgrade AWS provider and min required Terraform version to `6.8` and `1.11` respectively ([#12](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/issues/12)) ([2193a3c](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/commit/2193a3c954331369f2ccedf2c6b55ad6418c6806))
+
+## [1.2.0](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v1.1.3...v1.2.0) (2025-10-21)
+
+### Features
+
+* Add in overwrite variable and pass through to the call to the ssm par… ([#11](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/issues/11)) ([e1dd7a2](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/commit/e1dd7a268c5925b87aa8859c35d73d2b14a2503e))
+
+## [1.1.3](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v1.1.2...v1.1.3) (2025-10-21)
+
+### Bug Fixes
+
+* Update CI workflow versions to latest ([#9](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/issues/9)) ([de8df78](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/commit/de8df78dae1e027a5688a6b6c584d6aa82882c44))
+
 ## [1.1.2](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v1.1.1...v1.1.2) (2024-10-11)
 
 
