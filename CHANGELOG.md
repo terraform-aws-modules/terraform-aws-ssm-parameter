@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.1](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v2.1.0...v2.1.1) (2026-07-05)
+
+### Bug Fixes
+
+* Fix outputs.tf: one(compact([stored_value, stored_insecure_value])) fails for String/StringList parameters with AWS provider v6 ([#21](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/issues/21)) ([ab6bdb9](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/commit/ab6bdb920e827dee5d5a8645d3dc74f4a0d61b5e))
+
 ## [2.1.0](https://github.com/terraform-aws-modules/terraform-aws-ssm-parameter/compare/v2.0.1...v2.1.0) (2026-01-08)
 
 ### Features
